@@ -103,6 +103,20 @@ form.button_to {
     text-transform: uppercase;
     font-style: italic;
   }
+
+  .nav-user {
+    margin: auto;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .nav-user-link {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 3px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+  }
 }
 
 .page-header {

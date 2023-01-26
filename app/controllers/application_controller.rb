@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  # This allows us to secure pages by add ing "before_filter :authorize" to any controller that you want to secure. 
+  # If you add that to the top of a controller file, a user will need to be logged in to see the page.
   def authorize
     redirect_to '/login' unless current_user
   end
