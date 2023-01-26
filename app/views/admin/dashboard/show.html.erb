@@ -1,6 +1,39 @@
-<h1>Admin::Dashboard#show</h1>
-<p><%= @products.inspect %></p>
+<h1>Admin Dashboard</h1>
 
-<p>SnakeTown</p>
+<h3>Product Data</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-success">
+      <th scope="row">Number of products:</th>
+      <td><%= @products.inspect %></td>
+      <td>
+        <a href="/admin/products">
+          <button type="button" class="btn btn-success">
+            View all products
+          </button>
+        </a>
+      </td>
+    </tr>
+    <tr class="table-info">
+      <th scope="row">Number of categories:</th>
+      <td><%= @categories.inspect %></td>
+      <td>
+        <a href="/">
+          <button type="button" class="btn btn-success">
+            Back to home
+          </button>
+        </a>
+      </td>
+    </tr>
 
-<p><%= @categories.inspect %></p>
+  </tbody>
+</table>
+
+<p></p>
