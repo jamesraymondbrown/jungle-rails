@@ -49,7 +49,7 @@
       <ul class="navbar-nav">
         <li class="nav-item nav-user">
           <% if current_user %>
-            Hi, <%= current_user.name %> | <%= link_to "Logout", '/logout', class: 'nav-user-link' %>
+            Hi, <%= current_user.first_name %> | <%= link_to "Logout", '/logout', class: 'nav-user-link' %>
           <% else %>
             <%= link_to 'Login', '/login', class: 'nav-user-link' %> | <%= link_to 'Signup', '/signup', class: 'nav-user-link' %>
           <% end %>
