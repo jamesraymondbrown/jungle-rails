@@ -32,5 +32,21 @@ RSpec.describe Product, type: :model do
       expect(@product.errors.full_messages).to include("Price can't be blank")
     end
 
+    it 'should throw an error if quantity is blank' do
+      @category = Category.new(name: 'literature')
+      @category.save!
+      @product = @category.products.create(name: 'book', price: 2000)
+      @product.save
+
+      expect(@product.errors.full_messages).to include("Quantity can't be blank")
+    end
+
+    it 'should throw an error if category is blank' do
+      @product = Product.create(name: 'book', price: 2000, quantity: 9)
+      @product.save
+
+      expect(@product.errors.full_messages).to include("Category can't be blank")
+    end
+
   end
 end
