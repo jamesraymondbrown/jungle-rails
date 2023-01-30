@@ -18,10 +18,10 @@ RSpec.describe User, type: :model do
     end
 
     it 'should validate that the password and password confirmation match' do
-      @user = User.new()
+      @user = User.new(name: "James", email: "james@james.com", password: "james", password_confirmation: "jimmy")
       @user.save
 
-      expect(@user.errors.full_messages).to include("Password can't be blank", "Password confirmation can't be blank")
+      expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
     end
 
   end
