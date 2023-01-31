@@ -42,4 +42,10 @@ RSpec.describe User, type: :model do
 
   end
 
+  describe '.authenticate_with_credentials' do
+    it 'successfully logs in a user who inputs their username and password'
+
+    end
+  end
+
 end

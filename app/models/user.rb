@@ -1,10 +1,11 @@
 class User < ApplicationRecord
-
-  def self.authenticate_with_credentials
-  
-  end
   
   has_secure_password
+
+  def self.authenticate_with_credentials(params_email, params_password)
+    self.find_by(email: params_email)&.authenticate(params_password) 
+    # self.authenticate(params_email, params_password)
+  end
 
   validates :email, presence: true
   validates :first_name, presence: true
