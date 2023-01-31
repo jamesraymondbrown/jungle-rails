@@ -1,9 +1,8 @@
-context('Product Page', () => {
+context('Add to cart', () => {
   beforeEach(() => {
   })
 
   it('visits the home page', () => {
-    // https://on.cypress.io/type
     cy.visit('/', { timeout: 500000 })
     cy.get('nav').should('exist')
   })
@@ -16,11 +15,12 @@ context('Product Page', () => {
     cy.get(".products article").should("have.length", 2);
   });
 
-  it("clicks on a product", () => {
-    cy.contains("Scented Blade").click();
+  it("clicks 'add to cart' on a product", () => {
+    cy.get(".add-to-cart").first().click({ force: true });
   });
 
-  it('navigates to a new page when the product is clicked', () => {
-    cy.contains("The Scented Blade is an extremely rare")
+  it('verifies that the cart value has increased by 1', () => {
+    cy.contains("My Cart (1)")
   })
+
 })
