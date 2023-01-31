@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_secure_password
 
   def self.authenticate_with_credentials(params_email, params_password)
-    email_whitespace_removed = params_email.strip
+    email_whitespace_removed = params_email.strip.downcase
     self.find_by(email: email_whitespace_removed)&.authenticate(params_password) 
     # self.authenticate(params_email, params_password)
   end

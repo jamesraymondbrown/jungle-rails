@@ -56,6 +56,13 @@ RSpec.describe User, type: :model do
       user_lookup = User.authenticate_with_credentials("  james@james.com  ", "james")
       expect(user_lookup).to be_truthy
     end
+
+    it 'successfully authenticates a user who inputs their email with the wrong letter case' do
+      @user = User.new(first_name: "James", last_name: "Brown", email: "james@james.com", password: "james", password_confirmation: "james")
+      @user.save
+      user_lookup = User.authenticate_with_credentials("JaMeS@jAmEs.cOm  ", "james")
+      expect(user_lookup).to be_truthy
+    end
   end
 
 end
