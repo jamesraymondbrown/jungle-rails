@@ -43,8 +43,18 @@ RSpec.describe User, type: :model do
   end
 
   describe '.authenticate_with_credentials' do
-    it 'successfully logs in a user who inputs their username and password'
+    it 'successfully returns a user hash, when given an existing username and password' do
+      @user = User.new(first_name: "James", last_name: "Brown", email: "james@james.com", password: "james", password_confirmation: "james")
+      @user.save
+      user_lookup = User.authenticate_with_credentials("james@james.com", "james")
+      expect(user_lookup).to be_truthy
+    end
 
+    it 'successfully authenticates a user who inputs their email with spaces' do
+      @user = User.new(first_name: "James", last_name: "Brown", email: "james@james.com", password: "james", password_confirmation: "james")
+      @user.save
+      user_lookup = User.authenticate_with_credentials("  james@james.com  ", "james")
+      expect(user_lookup).to be_truthy
     end
   end
 
