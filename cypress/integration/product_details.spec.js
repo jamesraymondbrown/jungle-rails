@@ -2,7 +2,7 @@ context('Product Page', () => {
   beforeEach(() => {
   })
 
-  it('visits the home page', () => {
+  it('Visits the home page', () => {
     // https://on.cypress.io/type
     cy.visit('/', { timeout: 500000 })
     cy.get('nav').should('exist')
@@ -16,11 +16,11 @@ context('Product Page', () => {
     cy.get(".products article").should("have.length", 2);
   });
 
-  it("clicks on a product", () => {
+  it("Clicks on a product", () => {
     cy.contains("Scented Blade").click();
   });
 
-  it('navigates to a new page when the product is clicked', () => {
+  it('Navigates to a new page when the product is clicked', () => {
     cy.contains("The Scented Blade is an extremely rare")
   })
 })
