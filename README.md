@@ -2,20 +2,17 @@
 
 A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
 
-## Setup
+## Features
 
-1. Run `bundle install` to install dependencies
-2. Create `config/database.yml` by copying `config/database.example.yml`
-3. Create `config/secrets.yml` by copying `config/secrets.example.yml`
-4. Run `bin/rails db:reset` to create, load and seed db
-5. Create .env file based on .env.example
-6. Sign up for a Stripe account
-7. Put Stripe (test) keys into appropriate .env vars
-8. Run `bin/rails s -b 0.0.0.0` to start the server
+I implemented features to enable user login and registration, display product data on the cart and order pages, facilitate checkout, implement sold out badges, and more. I also implemented cypress tests to verify that core functionality works correctly. 
 
-## Database
+## Screenshots
 
-If Rails is complaining about authentication to the database, uncomment the user and password fields from `config/database.yml` in the development and test sections, and replace if necessary the user and password `development` to an existing database user.
+![Screenshot 2023-02-01 at 1 49 54 PM](https://user-images.githubusercontent.com/114964214/216173666-7c37c129-f363-4eae-bf2d-91e339bf685a.png)
+
+![Screenshot 2023-02-01 at 1 50 29 PM](https://user-images.githubusercontent.com/114964214/216173778-f25f751e-eb2b-40f0-a0a9-1088bb6e6191.png)
+
+![Screenshot 2023-02-01 at 1 57 11 PM](https://user-images.githubusercontent.com/114964214/216173811-b3c2b4c0-b38c-4476-adf1-3de93fd4c2dc.png)
 
 ## Stripe Testing
 
@@ -29,3 +26,4 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+- Cypress-rails
